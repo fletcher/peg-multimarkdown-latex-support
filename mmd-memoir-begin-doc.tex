@@ -1,0 +1,46 @@
+%
+%	Get ready for the actual document
+%
+
+\usepackage[
+	plainpages=false,
+	pdfpagelabels,
+	pdftitle={\mytitle},
+	pagebackref,
+	pdfauthor={\myauthor},
+	pdfkeywords={\mykeywords}
+	]{hyperref}
+\usepackage{memhfixc}
+
+
+\input{mmd-title}
+\title{\mytitle}
+\author{\myauthor}
+
+\ifx\theme\undefined
+\else
+	\usetheme{\theme}
+\fi
+
+\begin{document}
+
+
+\chapterstyle{\mychapterstyle}
+\pagestyle{\mypagestyle}
+
+% Frontmatter
+\frontmatter
+
+% Title Page
+\maketitle
+\clearpage
+
+\input{mmd-memoir-copyright}
+
+\tableofcontents
+%\listoffigures
+%\listoftables
+
+
+\mainmatter
+

@@ -1,0 +1,14 @@
+%
+%	MultiMarkdown beamer class footer file
+%
+
+\ifx\bibliocommand\undefined
+\else
+	\part{Bibliography}
+	\begin{frame}[allowframebreaks]
+	\frametitle{Bibliography}
+	\bibliographystyle{\bibliostyle}
+	\def\newblock{}
+	\bibliocommand
+	\end{frame}
+\fi

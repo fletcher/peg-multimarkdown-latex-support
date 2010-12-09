@@ -1,0 +1,37 @@
+%
+%	For setup that must follow metadata included in the document
+%
+
+\usepackage[
+	plainpages=false,
+	pdfpagelabels,
+	pdftitle={\mytitle},
+	pagebackref,
+	pdfauthor={\myauthor},
+	pdfkeywords={\mykeywords}
+	]{hyperref}
+\usepackage{memhfixc}
+
+
+\input{mmd-title}
+
+
+\begin{document}
+
+\title{\mytitle}
+\author{\myauthor}
+
+\mainmatter
+\maketitle
+
+
+% Copyright
+\setlength{\parindent}{0pt}
+
+\ifx\copyright\undefined
+\else
+	\textcopyright{} \copyright
+\fi
+
+\setlength{\parindent}{1em}
+
