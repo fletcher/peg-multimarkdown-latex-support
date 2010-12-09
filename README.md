@@ -7,6 +7,8 @@ Title:	LaTeX support files for peg-multimarkdown
 This project includes some default template files that can be used to create
 certain types of documents using LaTeX.
 
+These files are designed to serve as a template for you to customize to your
+own needs. I encourage creativity and sharing!
 
 # Default Metadata Types #
 
@@ -19,7 +21,8 @@ self-explanatory:
 
 * Date				--- Specify a date
 
-* Base Header Level	--- Specify the maximum organizational level for the document (e.g. part, chapter, section, subsection)
+* Base Header Level --- Specify the maximum organizational level for the
+  document (e.g. part, chapter, section, subsection)
 
 Metadata is used in order, so the order and placement of the `LaTeX Input`
 metadata fields is important.
@@ -77,4 +80,5 @@ To create a "book" using memoir:
 	latex input:		mmd-memoir-begin-doc
 	latex footer:		mmd-memoir-footer
 
-Header levels are: `h1` part, `h2` chapter, `h3` section, `h4` subsection, `h5` subsection.
+Header levels are: `h1` part, `h2` chapter, `h3` section, `h4` subsection,
+`h5` subsection.
