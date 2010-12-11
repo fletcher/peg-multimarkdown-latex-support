@@ -7,8 +7,15 @@ Title:	LaTeX support files for peg-multimarkdown
 This project includes some default template files that can be used to create
 certain types of documents using LaTeX.
 
-These files are designed to serve as a template for you to customize to your
-own needs. I encourage creativity and sharing!
+You are not limited to using these classes or templates. You can create your
+own template files, or just embed your LaTeX commands within comments in your
+MultiMarkdown document itself. If you find yourself creating similar documents
+over and over again, however, you may be better off creating a few templates
+you can simply call with the `LaTeX Input` metadata fields in MultiMarkdown.
+
+These files were designed to handle some of the common metadata fields in a
+consistent way, an to implement some defaults that *should* prevent errors if
+you leave out important metadata (substituting `Title`, `Author`, etc).
 
 [peg-multimarkdown]: https://github.com/fletcher/peg-multimarkdown
 
