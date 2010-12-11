@@ -13,6 +13,22 @@ own needs. I encourage creativity and sharing!
 [peg-multimarkdown]: https://github.com/fletcher/peg-multimarkdown
 
 
+# Installation #
+
+These files need to go in your `texmf` folder, wherever that may be.
+
+With MacTeX on Mac OS X:
+
+	~/Library/texmf/tex/latex/mmd
+
+On most *nix accounts, you can use:
+
+	~/texmf/tex/latex/mmd
+
+I don't remember off the top of my head where your texmf folder belongs in
+Windows.
+
+
 # Default Metadata Types #
 
 Several MultiMarkdown metadata keys are used in these files, and are fairly
