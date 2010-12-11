@@ -10,6 +10,9 @@ certain types of documents using LaTeX.
 These files are designed to serve as a template for you to customize to your
 own needs. I encourage creativity and sharing!
 
+[peg-multimarkdown]: https://github.com/fletcher/peg-multimarkdown
+
+
 # Default Metadata Types #
 
 Several MultiMarkdown metadata keys are used in these files, and are fairly
