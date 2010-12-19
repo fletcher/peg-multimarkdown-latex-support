@@ -63,6 +63,7 @@ basic metadata:
 	latex input:		mmd-article-header
 	Title:				Whatever Title You Like 
 	Base Header Level:	2  
+	LaTeX Mode:			memoir  
 	latex input:		mmd-article-begin-doc
 	latex footer:		mmd-memoir-footer
 
@@ -77,9 +78,10 @@ To create a pdf slideshow presentation using beamer:
 	Author:				Your Name  
 	Affiliation:		Your institution, web site, whatever
 	base header level:	3
-	Theme:				keynote-gradient
-	latex input:		mmd-beamer-begin-doc
-	latex footer:		mmd-beamer-footer
+	LaTeX Mode:			beamer  
+	Theme:				keynote-gradient  
+	latex input:		mmd-beamer-begin-doc  
+	latex footer:		mmd-beamer-footer  
 
 There are several beamer themes included that are derived from various keynote
 themes --- keynote-gradient, keynote-vintage, keynote-portfolio. I tweaked
@@ -103,6 +105,7 @@ To create a "book" using memoir:
 	latex input:		mmd-memoir-header
 	Title:				Your Title
 	Base Header Level:	2
+	LaTeX Mode:			memoir  
 	latex input:		mmd-memoir-begin-doc
 	latex footer:		mmd-memoir-footer
 
