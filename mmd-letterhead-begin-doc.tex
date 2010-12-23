@@ -1,0 +1,143 @@
+%
+%	Get ready for the actual document
+%
+
+% Black and White Option
+\ifx\blackandwhite\undefined
+	\def\musclogo{MUSC-C.pdf}
+\else
+	\definecolor{accent}{HTML}{000000}
+	\definecolor{returnaddress}{HTML}{000000}
+	\def\musclogo{MUSC-BW.pdf}
+\fi
+
+
+\ifx\mydate\undefined
+	\def\mydate{\today}
+\fi
+
+\usepackage[
+	plainpages=false,
+	pdfpagelabels,
+	pdftitle={\mytitle},
+	pagebackref,
+	pdfauthor={\myauthor},
+	pdfkeywords={\mykeywords}
+	]{hyperref}
+\usepackage{memhfixc}
+
+% Define signature
+\ifx\signature\undefined
+	\def\signature{~ \\ Sincerely,\\
+	\ifx\graphicsignature\undefined
+	
+	\else
+		\resizebox{2in}{!}{\includegraphics{signature}}\\
+	\fi
+\myauthor}
+\else
+\fi
+
+% Create return address
+\def\returnaddress{\raggedleft 
+\footnotesize
+\renewcommand{\baselinestretch}{1.1}
+
+\textbf{\myauthor} \\}
+
+\ifx\position\undefined
+\addtodef{\returnaddress}{}{\textit{\defaultposition}}
+\else
+	\addtodef{\returnaddress}{}{\textit{\position} \\}
+\fi
+
+\ifx\email\undefined
+\addtodef{\returnaddress}{}{\textit{\defaultemail}
+
+~
+
+}
+\else
+	\addtodef{\returnaddress}{}{\textit{\email}
+
+~
+
+}
+\fi
+
+\ifx\department\undefined
+\addtodef{\returnaddress}{}{\textbf{\defaultdepartment}}
+\else
+	\addtodef{\returnaddress}{}{\textbf{\department} \\}
+\fi
+
+\ifx\address\undefined
+\addtodef{\returnaddress}{}{\defaultaddress}
+\else
+	\addtodef{\returnaddress}{}{\address \\}
+\fi
+
+\ifx\phone\undefined
+\addtodef{\returnaddress}{}{\defaultphone}
+\else
+	\addtodef{\returnaddress}{}{Tel \phone \\}
+\fi
+
+
+\ifx\fax\undefined
+\addtodef{\returnaddress}{}{\defaultfax}
+\else
+	\addtodef{\returnaddress}{}{Fax \fax \\}
+\fi
+
+\ifx\web\undefined
+\addtodef{\returnaddress}{}{\defaultweb
+}
+\else
+	\addtodef{\returnaddress}{}{ \web \\
+}
+\fi
+
+\usepackage{mmd-letterhead}
+
+\begin{document}
+
+\setlength{\parindent}{0pt}
+
+\mainmatter
+
+% User coverpage style
+\thispagestyle{letterhead-cover}
+
+% Insert return address
+
+\begin{figure}[t]
+\begin{adjustwidth}{-0.5in}{-0.5in}
+\begin{minipage}[l][\logoheight]{4in}
+	\coverlogo
+	\vspace*{\fill}
+\end{minipage} 
+\hfill 
+\begin{minipage}[r][\logoheight]{2in} 
+	{\renewcommand{\baselinestretch}{1.1}
+	\color{returnaddress}\returnaddress}
+	\vspace*{\fill}
+\end{minipage}
+\end{adjustwidth}
+\end{figure}
+
+
+\pagestyle{letterhead}
+\large
+% Return to main settings
+
+
+\renewcommand{\baselinestretch}{1.2}
+\setlength{\parskip}{12pt}
+
+% Insert Recipient
+\myrecipient
+
+% Insert date
+\mydate
+
