@@ -48,7 +48,8 @@ self-explanatory:
 * Date				--- Specify a date
 
 * Base Header Level --- Specify the maximum organizational level for the
-  document (e.g. part, chapter, section, subsection)
+  document (e.g. part, chapter, section, subsection). You need to choose a
+  value for this that fits with the way you organized your document.
 
 Metadata is used in order, so the order and placement of the `LaTeX Input`
 metadata fields is important.
