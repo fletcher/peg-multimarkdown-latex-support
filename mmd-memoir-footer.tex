@@ -4,7 +4,10 @@
 
 
 % Back Matter
-\backmatter
+\if@mainmatter
+	we're in main
+	\backmatter
+\fi
 
 
 % Bibliography
@@ -24,4 +27,3 @@
 % Index
 \printindex
 
-\end{document}

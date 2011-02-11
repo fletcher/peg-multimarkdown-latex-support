@@ -26,6 +26,8 @@
 	]{hyperref}
 \usepackage{memhfixc}
 
+\def\justauthor{\myauthor}
+
 % Define signature
 \ifx\signature\undefined
 	\def\signature{~ \\ Sincerely,\\
@@ -34,7 +36,7 @@
 	\else
 		\resizebox{2in}{!}{\includegraphics{signature}}\\
 	\fi
-\myauthor}
+\justauthor}
 \else
 \fi
 
@@ -104,6 +106,19 @@
 
 \setlength{\parindent}{0pt}
 
+% Configure Recipient
+
+\ifx\recipient\undefined
+\else
+	\addtodef{\myrecipient}{}{\recipient}
+\fi
+
+\ifx\recipientaddress\undefined
+\else
+	\addtodef{\myrecipient}{}{\\ \recipientaddress}
+\fi
+
+
 \mainmatter
 
 % User coverpage style
@@ -134,6 +149,8 @@
 
 \renewcommand{\baselinestretch}{1.2}
 \setlength{\parskip}{12pt}
+
+%\input{mmd-title}
 
 % Insert Recipient
 \myrecipient
