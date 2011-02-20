@@ -48,19 +48,19 @@
 \textbf{\myauthor} \\}
 
 \ifx\position\undefined
-\addtodef{\returnaddress}{}{\textit{\defaultposition}}
+\addtodef{\returnaddress}{}{\emph{\defaultposition}}
 \else
-	\addtodef{\returnaddress}{}{\textit{\position} \\}
+	\addtodef{\returnaddress}{}{\emph{\position} \\}
 \fi
 
 \ifx\email\undefined
-\addtodef{\returnaddress}{}{\textit{\defaultemail}
+\addtodef{\returnaddress}{}{\emph{\defaultemail}
 
 ~
 
 }
 \else
-	\addtodef{\returnaddress}{}{\textit{\email}
+	\addtodef{\returnaddress}{}{\emph{\email}
 
 ~
 
