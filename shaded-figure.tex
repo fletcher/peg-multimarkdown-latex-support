@@ -1,0 +1,6 @@
+% Renew figure environment to include white background %
+% Useful in beamer presentations %
+
+\let\oldfigure\figure
+\let\endoldfigure\endfigure
+\renewenvironment{figure}[1]{\begin{oldfigure}[#1]\begin{shaded}}{\end{shaded}\end{oldfigure}}
