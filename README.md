@@ -3,18 +3,18 @@ Title:	LaTeX support files for peg-multimarkdown
 
 # Introduction #
 
-[peg-multimarkdown] is a program to convert plain text into HTML or LaTeX.
-This project includes some default template files that can be used to create
+[peg-multimarkdown] is  a program to  convert plain  text into HTML  or LaTeX.
+This project includes  some default template files that can  be used to create
 certain types of documents using LaTeX.
 
-You are not limited to using these classes or templates. You can create your
-own template files, or just embed your LaTeX commands within comments in your
+You are not limited  to using these classes or templates.  You can create your
+own template files, or just embed  your LaTeX commands within comments in your
 MultiMarkdown document itself. If you find yourself creating similar documents
-over and over again, however, you may be better off creating a few templates
+over and over again,  however, you may be better off  creating a few templates
 you can simply call with the `LaTeX Input` metadata fields in MultiMarkdown.
 
-These files were designed to handle some of the common metadata fields in a
-consistent way, an to implement some defaults that *should* prevent errors if
+These files were  designed to handle some  of the common metadata  fields in a
+consistent way, an to implement some  defaults that *should* prevent errors if
 you leave out important metadata (substituting `Title`, `Author`, etc).
 
 [peg-multimarkdown]: https://github.com/fletcher/peg-multimarkdown
@@ -32,13 +32,13 @@ On most *nix accounts, you can use:
 
 	~/texmf/tex/latex/mmd
 
-I don't remember off the top of my head where your texmf folder belongs in
+I don't  remember off the top  of my head  where your texmf folder  belongs in
 Windows.
 
 
 # Default Metadata Types #
 
-Several MultiMarkdown metadata keys are used in these files, and are fairly
+Several MultiMarkdown  metadata keys are used  in these files, and  are fairly
 self-explanatory:
 
 * Title				--- Specify the title of the document
@@ -51,13 +51,13 @@ self-explanatory:
   document (e.g. part, chapter, section, subsection). You need to choose a
   value for this that fits with the way you organized your document.
 
-Metadata is used in order, so the order and placement of the `LaTeX Input`
+Metadata is  used in order,  so the order and  placement of the  `LaTeX Input`
 metadata fields is important.
 
 
 # Article #
 
-To create a document using the memoir article class, you need the following
+To create  a document using the  memoir article class, you  need the following
 basic metadata:
 
 
@@ -85,18 +85,37 @@ To create a pdf slideshow presentation using beamer:
 	latex footer:		mmd-beamer-footer  
 
 There are several beamer themes included that are derived from various keynote
-themes --- keynote-gradient, keynote-vintage, keynote-portfolio. I tweaked
-these themes to work with MultiMarkdown, but they were originally created by
+themes  --- keynote-gradient,  keynote-vintage,  keynote-portfolio. I  tweaked
+these themes to  work with MultiMarkdown, but they were  originally created by
 others (see the source files for details).
 
 The header levels are set so that `h1` is a part, `h2` is a section, `h3` is a
-slide, and `h4` is used to designate text that will print in a handout, but
+slide, and `h4`  is used to designate  text that will print in  a handout, but
 not in the actual slideshow.
 
 
 # Letterhead #
 
-Still in progress.
+To create a letter on customized letterhead using MultiMarkdown:
+
+	latex input:		mmd-letterhead-header  
+	Title:				Test Letter  
+	Author:				John Doe  
+	email:				fletcher@example.net  
+	address:			123 Main St.  
+						Some City, ST  12345  
+	recipient:			Some Person  
+	Recipient Address:	321 Main St  
+						Some City, ST  54321  
+	phone:				(555) 555-5555  
+	Date:				December 15, 2007  
+	latex xslt:			custom-letterhead.xslt  
+	black and white:	true  
+	base header level:	2  
+	latex mode:			memoir  
+	latex footer:		mmd-letterhead-footer  
+	latex input:		mmd-letterhead-begin-doc  
+
 
 
 # Memoir #
@@ -110,5 +129,5 @@ To create a "book" using memoir:
 	latex input:		mmd-memoir-begin-doc
 	latex footer:		mmd-memoir-footer
 
-Header levels are: `h1` part, `h2` chapter, `h3` section, `h4` subsection,
-`h5` subsection.
+Header levels  are: `h1`  part, `h2` chapter,  `h3` section,  `h4` subsection,
+`h5` subsubsection, and `h6` paragraph.
