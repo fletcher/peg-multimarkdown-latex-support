@@ -1,0 +1,8 @@
+% Change \citep to emulate \cite if natbib not in use
+% Redefine it as \cite if it natbib is loaded
+
+\ifx\citep\undefined
+	\let\citep\cite
+\else
+	\renewcommand\citep{\cite}
+\fi
