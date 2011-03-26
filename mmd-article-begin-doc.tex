@@ -8,7 +8,7 @@
 	pdftitle={\mytitle},
 	pagebackref,
 	pdfauthor={\myauthor},
-	pdfkeywords={\mykeywords}
+	pdfkeywords={\keywords}
 	]{hyperref}
 \usepackage{memhfixc}
 
@@ -28,9 +28,9 @@
 % Copyright
 \setlength{\parindent}{0pt}
 
-\ifx\copyright\undefined
+\ifx\mycopyright\undefined
 \else
-	\textcopyright{} \copyright
+	\textcopyright{} \mycopyright
 \fi
 
 \setlength{\parindent}{1em}
