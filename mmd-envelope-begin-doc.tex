@@ -1,0 +1,99 @@
+%
+%	Get ready for the actual document
+%
+
+% Black and White Option
+\ifx\blackandwhite\undefined
+	\def\musclogo{MUSC-C.pdf}
+\else
+	\definecolor{accent}{HTML}{000000}
+	\definecolor{returnaddress}{HTML}{000000}
+	\def\musclogo{MUSC-BW.pdf}
+\fi
+
+
+\ifx\mydate\undefined
+	\def\mydate{\today}
+\fi
+
+\usepackage[
+	plainpages=false,
+	pdfpagelabels,
+	pdftitle={\mytitle},
+	pagebackref,
+	pdfauthor={\myauthor},
+	pdfkeywords={\mykeywords}
+	]{hyperref}
+\usepackage{memhfixc}
+
+\def\justauthor{\myauthor}
+
+
+% Create return address
+\def\returnaddress{\raggedright
+\normalsize
+\renewcommand{\baselinestretch}{1.1}
+
+\textbf{\myauthor} \\}
+
+\ifx\position\undefined
+\addtodef{\returnaddress}{}{\emph{\defaultposition}}
+\else
+	\addtodef{\returnaddress}{}{\emph{\position} \\}
+\fi
+
+
+\ifx\department\undefined
+\addtodef{\returnaddress}{}{\textbf{\defaultdepartment}}
+\else
+	\addtodef{\returnaddress}{}{\textbf{\department} \\}
+\fi
+
+\ifx\address\undefined
+\addtodef{\returnaddress}{}{\defaultaddress}
+\else
+	\addtodef{\returnaddress}{}{\address \\}
+\fi
+
+
+\usepackage{mmd-envelope}
+
+\begin{document}
+
+\setlength{\parindent}{0pt}
+
+% Configure Recipient
+
+\ifx\recipient\undefined
+\else
+	\addtodef{\myrecipient}{}{\textbf{\recipient}}
+\fi
+
+\ifx\recipientaddress\undefined
+\else
+	\addtodef{\myrecipient}{}{\\ \recipientaddress}
+\fi
+
+
+\mainmatter
+
+% Use envelope style
+\thispagestyle{envelope}
+
+% Insert return address
+
+{\color{returnaddress}\returnaddress}
+\vspace*{\fill}
+
+% Return to main settings
+\large
+\renewcommand{\baselinestretch}{1.2}
+\setlength{\parskip}{12pt}
+
+% Insert Recipient
+\begin{adjustwidth}{3in}{0in}
+\myrecipient
+\vspace*{\fill}
+\end{adjustwidth}
+
+\end{document}
