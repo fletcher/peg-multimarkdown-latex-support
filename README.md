@@ -116,6 +116,10 @@ To create a letter on customized letterhead using MultiMarkdown:
 	latex footer:		mmd-letterhead-footer  
 	latex input:		mmd-letterhead-begin-doc  
 
+If you want to create an envelope using the same document, simply change the
+last line of the metadata:
+
+	latex input:		mmd-envelope-begin-doc
 
 
 # Memoir #
