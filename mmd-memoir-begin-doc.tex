@@ -17,6 +17,12 @@
 \title{\mytitle}
 \author{\myauthor}
 
+\ifx\mydate\undefined
+\else
+	\date{\mydate}
+\fi
+
+
 \ifx\theme\undefined
 \else
 	\usetheme{\theme}

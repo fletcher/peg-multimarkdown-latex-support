@@ -16,6 +16,12 @@
 	\institute{\affiliation}
 \fi
 
+\ifx\mydate\undefined
+	\def\mydate{\today}
+\else
+	\date{\mydate}
+\fi
+
 \ifx\event\undefined
 \else
 	\date[\mydate]{\mydate~ / \event }

@@ -13,7 +13,8 @@
 
 
 \ifx\mydate\undefined
-	\def\mydate{\today}
+\else
+	\date{\mydate}
 \fi
 
 \usepackage[
