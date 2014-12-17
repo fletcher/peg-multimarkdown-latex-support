@@ -1,0 +1,17 @@
+% This template provides basic hooks for integrating a pre-existing
+% LaTeX template into a MultiMarkdown framework. This allows
+% writing academic papers which often provide strict style
+% guidelines to be easily written in MultiMarkdown. In order to
+% to accomplish this, three lines of metadata must be used in the
+% MultiMarkdown file:
+% latex template: foo - which specifies which subfolder contains
+% the latex template
+% latex input: mmd-latex-template - uses the template name to load
+% the desired template
+% latex footer: mmd-latex-template-footer - adds the template
+% specified footer
+
+% Author: Jason Ziglar <jpz@vt.edu>
+
+
+\input{\latextemplate/setup}
