@@ -1,0 +1,54 @@
+% Notes
+% \usepackage{fontenc} % Legacy
+% \usepackage{lmodern} % seems auto-loaded?
+% \usepackage{bidi} % Will return error since other packages are loaded. It has to be put in position immediately before document begins
+% \fontfamily{lmodern}\selectfont one way to select lmodern
+
+% Fonts
+% Palatino Linotype % Greek
+% Tahoma % Hebrew
+
+% Use cm-unicode as default
+% \setmainfont{CMU Serif}
+% \setsansfont{CMU Sans Serif}
+% \setmonofont{CMU Typewriter Text} % This one is not mature enough. Characters like "{}" is absent. In the future once it is mature, it would be better to set the main/sans/mono to CMU and NOT switching from Latin to Greek or vice versa.
+
+% ucharclasses
+\usepackage[Greek, Hebrew]{ucharclasses}
+% \usepackage{fontspec} % fontspec doc said most of xltxtra is incorporated into fontspec
+\usepackage{xltxtra} % include fontspec
+
+% Font Features
+\defaultfontfeatures[\rmfamily,\sffamily]{Ligatures=TeX}
+
+\usepackage{unicode-math}
+
+% Define my languages: Except for mylatin, the other shouldn't be used, since I want to use fontspec for one time use only
+\newcommand{\mylatin}{\renewcommand\rmdefault{lmr}\renewcommand\sfdefault{lmss}\renewcommand\ttdefault{lmtt}\defaultfontfeatures[\rmfamily,\sffamily]{Ligatures=TeX}}
+% \newcommand{\mygreek}{\setmainfont{CMU Serif}\setsansfont{CMU Sans Serif}\setmonofont{CMU Typewriter Text}} % Why doesn't this work? All font shapes not applied after this
+% \newfontfamily\mygreek{CMU Serif}
+% \newfontfamily\mycjk{Microsoft YaHei}
+% \newfontfamily\myhebrew{Narkisim}
+
+% XeCJK
+\usepackage{xeCJK} % Another way to support CJK
+\setCJKmainfont[BoldFont = * Bold, AutoFakeSlant]{Kaiti TC}
+\setCJKsansfont[AutoFakeSlant]{Microsoft YaHei}
+\setCJKmonofont[AutoFakeBold, AutoFakeSlant]{FangSong}
+
+% Default
+% \setDefaultTransitions{\fontspec{CMU Serif}}{}
+
+% Latin
+% \setTransitionsForLatin{\mylatin}{}
+
+% Chinese
+% \setTransitionsForCJK{\fontspec[BoldFont = * Bold, AutoFakeSlant]{Kaiti TC}}{}
+
+% Greek
+\setTransitionsForGreek{\fontspec{CMU Serif}}{\mylatin}
+% \setTransitionsForGreek{\setmainfont{CMU Serif}\setsansfont{CMU Sans Serif}\setmonofont{CMU Typewriter Text}}{\mylatin}
+% \setTransitionsForGreek{\mygreek}{}
+
+% Hebrew is the trouble maker and has to use the setRTL and setLTR in this specific way: { ... \setRTL}{ ... \setLTR}
+\setTransitionsFor{Hebrew}{\fontspec[AutoFakeBold, AutoFakeSlant]{Narkisim}\setRTL}{\mylatin \setLTR} % words are RTL but sentences are LTR due to spaces

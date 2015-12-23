@@ -13,8 +13,7 @@
 
 
 \ifx\mydate\undefined
-\else
-	\date{\mydate}
+	\def\mydate{\today}
 \fi
 
 \usepackage[
@@ -23,7 +22,7 @@
 	pdftitle={\mytitle},
 	pagebackref,
 	pdfauthor={\myauthor},
-	pdfkeywords={\mykeywords}, 
+	pdfkeywords={\keywords}, 
 	colorlinks=true, % commented this out if you don't like your link appears blue
 	linkcolor=blue, % commented this out if you don't like your link appears blue
 	citecolor=blue, % commented this out if you don't like your link appears blue
@@ -34,10 +33,21 @@
 
 \def\justauthor{\myauthor}
 
+% Define signature
+\ifx\signature\undefined
+	\def\signature{~ \\ Sincerely,\\
+	\ifx\graphicsignature\undefined
+	
+	\else
+		\resizebox{2in}{!}{\includegraphics{signature}}\\
+	\fi
+\justauthor}
+\else
+\fi
 
 % Create return address
-\def\returnaddress{\raggedright
-\normalsize
+\def\returnaddress{\raggedleft 
+\footnotesize
 \renewcommand{\baselinestretch}{1.1}
 
 \textbf{\myauthor} \\}
@@ -48,6 +58,19 @@
 	\addtodef{\returnaddress}{}{\emph{\position} \\}
 \fi
 
+\ifx\email\undefined
+\addtodef{\returnaddress}{}{\emph{\defaultemail}
+
+~
+
+}
+\else
+	\addtodef{\returnaddress}{}{\emph{\email}
+
+~
+
+}
+\fi
 
 \ifx\department\undefined
 \addtodef{\returnaddress}{}{\textbf{\defaultdepartment}}
@@ -61,10 +84,33 @@
 	\addtodef{\returnaddress}{}{\address \\}
 \fi
 
+\ifx\phone\undefined
+\addtodef{\returnaddress}{}{\defaultphone}
+\else
+	\addtodef{\returnaddress}{}{Tel \phone \\}
+\fi
 
-\usepackage{mmd-envelope}
 
+\ifx\fax\undefined
+\addtodef{\returnaddress}{}{\defaultfax}
+\else
+	\addtodef{\returnaddress}{}{Fax \fax \\}
+\fi
+
+\ifx\web\undefined
+\addtodef{\returnaddress}{}{\defaultweb
+}
+\else
+	\addtodef{\returnaddress}{}{ \web \\
+}
+\fi
+
+\usepackage{mmd-letterhead}
+
+\usepackage{bidi} % Provide right to left language support in XeLaTeX (e.g. Hebrew, Arabic)
 \begin{document}
+
+\VerbatimFootnotes
 
 \setlength{\parindent}{0pt}
 
@@ -72,7 +118,7 @@
 
 \ifx\recipient\undefined
 \else
-	\addtodef{\myrecipient}{}{\textbf{\recipient}}
+	\addtodef{\myrecipient}{}{\recipient}
 \fi
 
 \ifx\recipientaddress\undefined
@@ -83,23 +129,40 @@
 
 \mainmatter
 
-% Use envelope style
-\thispagestyle{envelope}
+% User coverpage style
+\thispagestyle{letterhead-cover}
 
 % Insert return address
 
-{\color{returnaddress}\returnaddress}
-\vspace*{\fill}
+\begin{figure}[t]
+\begin{adjustwidth}{-0.5in}{-0.5in}
+\begin{minipage}[l][\logoheight]{4in}
+	\coverlogo
+	\vspace*{\fill}
+\end{minipage} 
+\hfill 
+\begin{minipage}[r][\logoheight]{2in} 
+	{\renewcommand{\baselinestretch}{1.1}
+	\color{returnaddress}\returnaddress}
+	\vspace*{\fill}
+\end{minipage}
+\end{adjustwidth}
+\end{figure}
 
-% Return to main settings
+
+\pagestyle{letterhead}
 \large
+% Return to main settings
+
+
 \renewcommand{\baselinestretch}{1.2}
 \setlength{\parskip}{12pt}
 
-% Insert Recipient
-\begin{adjustwidth}{3in}{0in}
-\myrecipient
-\vspace*{\fill}
-\end{adjustwidth}
+%\input{mmd-title}
 
-\end{document}
+% Insert Recipient
+\myrecipient
+
+% Insert date
+\mydate
+
