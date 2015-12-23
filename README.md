@@ -1,137 +1,79 @@
-Title:	LaTeX support files for peg-multimarkdown  
-
-
 # Introduction #
 
-[peg-multimarkdown] is  a program to  convert plain  text into HTML  or LaTeX.
-This project includes  some default template files that can  be used to create
-certain types of documents using LaTeX.
-
-You are not limited  to using these classes or templates.  You can create your
-own template files, or just embed  your LaTeX commands within comments in your
-MultiMarkdown document itself. If you find yourself creating similar documents
-over and over again,  however, you may be better off  creating a few templates
-you can simply call with the `LaTeX Input` metadata fields in MultiMarkdown.
-
-These files were  designed to handle some  of the common metadata  fields in a
-consistent way, an to implement some  defaults that *should* prevent errors if
-you leave out important metadata (substituting `Title`, `Author`, etc).
-
-[peg-multimarkdown]: https://github.com/fletcher/peg-multimarkdown
+This is folk from Fletcher's [peg-multimarkdown-latex-support](https://github.com/fletcher/peg-multimarkdown-latex-support).
 
 
-# Installation #
+## What's Modified ##
 
-These files need to go in your `texmf` folder, wherever that may be.
-
-With MacTeX on Mac OS X:
-
-	~/Library/texmf/tex/latex/mmd
-
-On most *nix accounts, you can use:
-
-	~/texmf/tex/latex/mmd
-
-I don't  remember off the top  of my head  where your texmf folder  belongs in
-Windows.
+- `mmd-article-header.tex` added an optional choice to use `twopage` instead
+- all `*-begin-doc.tex` are modified such that all links will appears blue
+- all `*-begin-doc.tex` added a ``*-begin-doc-bidi.tex` variants. This added right to left language support in XeLaTeX (e.g. Hebrew, Arabic). `bidi` has to be used immediately before the `\begin{document}`, so this is the only way to make it work
 
 
-# Default Metadata Types #
-
-Several MultiMarkdown  metadata keys are used  in these files, and  are fairly
-self-explanatory:
-
-* Title				--- Specify the title of the document
-
-* Author			--- Specify the author of the document
-
-* Date				--- Specify a date
-
-* Base Header Level --- Specify the maximum organizational level for the
-  document (e.g. part, chapter, section, subsection). You need to choose a
-  value for this that fits with the way you organized your document.
-
-Metadata is  used in order,  so the order and  placement of the  `LaTeX Input`
-metadata fields is important.
+## What's New ##
 
 
-# Article #
+### `mmd-load-unicode-related` ###
 
-To create  a document using the  memoir article class, you  need the following
-basic metadata:
+Provide Automated unicode support in XeLaTeX, see comments in the file.
 
+This load the package `xltxtra`, which loads the `fontspec`, which
 
-	latex input:		mmd-article-header
-	Title:				Whatever Title You Like 
-	Base Header Level:	2  
-	LaTeX Mode:			memoir  
-	latex input:		mmd-article-begin-doc
-	latex footer:		mmd-memoir-footer
+> pro­vides an au­to­matic and uni­fied in­ter­face to fea­ture-rich AAT and OpenType fonts through the NFSS in ... XeLaTeX [^ <http://ctan.org/pkg/fontspec>]
 
+The rest of the file is to set things up such that font transitions between the followings are automated:
 
-# Beamer #
+- Latin (include English...)
+- Greek (include `unicode-math` where some of us like to use unicode Greek letters rather than say `\alpha`)
+- Hebrew (Right to left language, hence the `bidi` used above)
+- CJK (Chinese, Japanese, Korean)
 
-To create a pdf slideshow presentation using beamer:
+These are all languages I need to use. Few free to expand this to support other languages.
 
-	latex input:		mmd-beamer-header  
-	Title:				Your Title  
-	Subtitle:			Some optional subtitle 
-	Author:				Your Name  
-	Affiliation:		Your institution, web site, whatever
-	base header level:	3
-	LaTeX Mode:			beamer  
-	Theme:				keynote-gradient  
-	latex input:		mmd-beamer-begin-doc  
-	latex footer:		mmd-beamer-footer  
-
-There are several beamer themes included that are derived from various keynote
-themes  --- keynote-gradient,  keynote-vintage,  keynote-portfolio. I  tweaked
-these themes to  work with MultiMarkdown, but they were  originally created by
-others (see the source files for details).
-
-The header levels are set so that `h1` is a part, `h2` is a section, `h3` is a
-slide, and `h4`  is used to designate  text that will print in  a handout, but
-not in the actual slideshow.
+I am very inexperienced in how LaTeX handle this (via `fontspec`), so I have a lot of trials and errors. So my file has a lot of comments. Feel free to clean things out and put more explanation there.
 
 
-# Letterhead #
+### `mmd-load-amsthm` & `amsthm.css` ###
 
-To create a letter on customized letterhead using MultiMarkdown:
+It loads the `amsthm` package with some predefines theorem style
 
-	latex input:		mmd-letterhead-header  
-	Title:				Test Letter  
-	Author:				John Doe  
-	email:				fletcher@example.net  
-	address:			123 Main St.  
-						Some City, ST  12345  
-	recipient:			Some Person  
-	Recipient Address:	321 Main St  
-						Some City, ST  54321  
-	phone:				(555) 555-5555  
-	Date:				December 15, 2007  
-	latex xslt:			custom-letterhead.xslt  
-	black and white:	true  
-	base header level:	2  
-	latex mode:			memoir  
-	latex footer:		mmd-letterhead-footer  
-	latex input:		mmd-letterhead-begin-doc  
+ The `thmd` metadata variables (which should be defined before you use `mmd-load-amsthm`) defines the section that the theorem count resets. e.g. `thmd: chapter`
 
-If you want to create an envelope using the same document, simply change the
-last line of the metadata:
+The `amsthm.css` mimics this in HTML version of the document. See how it's done in [amsthm usage](readme-amsthm.md).
 
-	latex input:		mmd-envelope-begin-doc
+### `mmd-load-pdfpages` ###
+
+Make `![](*.pdf)` possible in LaTeX too.
 
 
-# Memoir #
+### `mmd-load-toc-setcounter` & `mmd-load-toc` ###
 
-To create a "book" using memoir:
+`mmd-memoir-begin-doc.tex` already has TOC loaded, but some others doesn't (e.g. article). Use this to add TOC after the `*-begin-doc` metadata in your md file.
 
-	latex input:		mmd-memoir-header
-	Title:				Your Title
-	Base Header Level:	2
-	LaTeX Mode:			memoir  
-	latex input:		mmd-memoir-begin-doc
-	latex footer:		mmd-memoir-footer
+`mmd-load-toc-setcounter` should be used before `mmd-memoir-begin-doc.tex` or `mmd-load-toc`. You also need to define metadata variables `tocd` & `secd` before `mmd-load-toc-setcounter`. It sets `secnumdepth` and `tocdepth`. I personally use 5 for both of them.
 
-Header levels  are: `h1`  part, `h2` chapter,  `h3` section,  `h4` subsection,
-`h5` subsubsection, and `h6` paragraph.
+
+### `mmd-load-physics-related` ###
+
+This loads Physics related packages, including those within `mmd-load-ams.tex`.
+
+
+### `mmd-load-tables-related` ###
+
+This included many tables related packages. See the comments in the files.
+
+Some are helpful when your table is too big. Some are helpful if you need to rotate the table direction (and you need to include raw LaTeX in your md file).
+
+
+### `mmd-load-headings` ###
+
+Use headings as `pagestyle`
+
+
+### `mmd-load-theme` ###
+
+Use another theme in beamer class. The default example is `Berkeley`.
+
+# Examples #
+
+See [Example Metadata Setup in MMD](readme-metadata.md).
