@@ -42,7 +42,7 @@ HTML Header:	<script type="text/x-mathjax-config">
 ### Custom CSS for HTML Output ###
 
 ```
-CSS:	https://github.com/KolenCheung/peg-multimarkdown-latex-support/raw/master/Grump.css
+CSS:	https://kolencheung.github.io/peg-multimarkdown-latex-support/Grump.css
 HTML Header:	<div id="wrapper">
 HTML Header Level:	1
 ```
@@ -78,7 +78,7 @@ Add `LaTeX Input:	mmd-load-unicode-related`
 Add (see [LaTeX Document Sectioning][] for section name):
 
 ```
-CSS:	https://github.com/KolenCheung/peg-multimarkdown-latex-support/raw/master/amsthm.css
+CSS:	https://kolencheung.github.io/peg-multimarkdown-latex-support/amsthm.css
 thmd:	chapter
 LaTeX Input:	mmd-load-amsthm
 ```
