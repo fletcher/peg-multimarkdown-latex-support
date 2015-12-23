@@ -5,6 +5,8 @@ The goals of the metadata setup are:
 - Include Physics and Math support, including the `amsthm` mentioned above
 - Both HTML (hence MMD editor preview) and LaTeX output are as close as possible
 
+See [Example here](https://kolencheung.github.io/peg-multimarkdown-latex-support/index.md).
+
 
 ## Header ##
 
