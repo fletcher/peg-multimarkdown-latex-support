@@ -18,7 +18,7 @@ HTML Header:	<script type="text/x-mathjax-config">
 	<script type="text/javascript"
 		src="https://beta.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
 	</script>
-CSS:	https://github.com/KolenCheung/peg-multimarkdown-latex-support/raw/master/Grump.css
+CSS:	https://kolencheung.github.io/peg-multimarkdown-latex-support/Grump.css
 HTML Header:	<div id="wrapper">
 HTML Header Level:	1
 LaTeX Header Level:	2
@@ -28,7 +28,7 @@ LaTeX Input:	mmd-load-physics-related
 LaTeX Input:	mmd-load-tables-related
 LaTeX Input:	mmd-load-pdfpages
 LaTeX Input:	mmd-load-headings
-CSS:	https://github.com/KolenCheung/peg-multimarkdown-latex-support/raw/master/amsthm.css
+CSS:	https://kolencheung.github.io/peg-multimarkdown-latex-support/amsthm.css
 thmd:	chapter
 LaTeX Input:	mmd-load-amsthm
 Title:	Temp Title
