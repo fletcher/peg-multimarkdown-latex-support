@@ -47,6 +47,7 @@ HTML Header:	<div id="wrapper">
 HTML Header Level:	1
 ```
 
+Other choices are `antique.css` & `swiss.css`.
 
 ### Document Class Setup And Other Packages ###
 
