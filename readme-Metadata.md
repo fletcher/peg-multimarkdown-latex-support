@@ -13,7 +13,7 @@ See [Example here](https://ickc.github.io/peg-multimarkdown-latex-support/index.
 
 ### MathJax ###
 
-This is more complicated than usual MathJax setup to include the Physics package, and other goodies. It uses the MathJax beta which support the CHTML option which is faster than others. Change `beta` to `cdn` for non-beta version.
+This is more complicated than usual MathJax setup to include the Physics package, and other goodies.
 
 ```
 HTML Header:	<script type="text/x-mathjax-config">
@@ -34,7 +34,7 @@ HTML Header:	<script type="text/x-mathjax-config">
 		});
 	</script>
 	<script type="text/javascript"
-		src="https://beta.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
 	</script>
 ```
 
