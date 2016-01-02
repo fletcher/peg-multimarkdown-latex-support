@@ -5,7 +5,7 @@ The goals of the metadata setup are:
 - Include Physics and Math support, including the `amsthm` mentioned above
 - Both HTML (hence MMD editor preview) and LaTeX output are as close as possible
 
-See [Example here](https://kolencheung.github.io/peg-multimarkdown-latex-support/index.md).
+See [Example here](https://ickc.github.io/peg-multimarkdown-latex-support/index.md).
 
 
 ## Header ##
@@ -13,7 +13,7 @@ See [Example here](https://kolencheung.github.io/peg-multimarkdown-latex-support
 
 ### MathJax ###
 
-This is more complicated than usual MathJax setup to include the Physics package, and other goodies. It uses the MathJax beta which support the CHTML option which is faster than others. Change `beta` to `cdn` for non-beta version.
+This is more complicated than usual MathJax setup to include the Physics package, and other goodies.
 
 ```
 HTML Header:	<script type="text/x-mathjax-config">
@@ -34,7 +34,7 @@ HTML Header:	<script type="text/x-mathjax-config">
 		});
 	</script>
 	<script type="text/javascript"
-		src="https://beta.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+		src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
 	</script>
 ```
 
@@ -42,7 +42,7 @@ HTML Header:	<script type="text/x-mathjax-config">
 ### Custom CSS for HTML Output ###
 
 ```
-CSS:	https://kolencheung.github.io/peg-multimarkdown-latex-support/Grump.css
+CSS:	https://ickc.github.io/peg-multimarkdown-latex-support/Grump.css
 HTML Header:	<div id="wrapper">
 HTML Header Level:	1
 ```
@@ -79,7 +79,7 @@ Add `LaTeX Input:	mmd-load-unicode-related`
 Add (see [LaTeX Document Sectioning][] for section name):
 
 ```
-CSS:	https://kolencheung.github.io/peg-multimarkdown-latex-support/amsthm.css
+CSS:	https://ickc.github.io/peg-multimarkdown-latex-support/amsthm.css
 thmd:	chapter
 LaTeX Input:	mmd-load-amsthm
 ```
