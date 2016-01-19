@@ -38,7 +38,7 @@ I am very inexperienced in how LaTeX handle this (via `fontspec`), so I have a l
 
 This one use `CMU` and `XeCJK` to support Greek and Chinese respectively.
 
-The fonts CMU stands for Computer Modern Unicode and is intended to replicate the default font LaTeX used, Computer Modern, and adding unicode support. However it isn't a complete project. In my experience it misses some character like `<>`.
+The fonts CMU stands for Computer Modern Unicode and is intended to replicate the default font LaTeX used, Computer Modern, and adding unicode support. However it isn't a complete project. In my experience it misses some character like `<>`. You can get the CMU font [here](http://cm-unicode.sourceforge.net).
 
 The fonts I picked for CJK is for Chinese only. Feel free to substitute any other CJK fonts there.
 
