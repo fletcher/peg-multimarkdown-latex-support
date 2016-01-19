@@ -71,7 +71,12 @@ Add `LaTeX Input:	mmd-load-headings`
 
 ### XeLaTeX and Unicode Support ###
 
-Add `LaTeX Input:	mmd-load-unicode-related`
+Add
+
+```
+LaTeX Input:	mmd-load-unicode-related  
+Use XeLaTeX:	true  
+```
 
 
 ### `amsthm` ###
