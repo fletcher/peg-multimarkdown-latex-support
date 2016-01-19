@@ -1,0 +1,16 @@
+\usepackage{xltxtra} % include fontspec
+
+% Use cm-unicode as default
+\setmainfont{CMU Serif}
+\setsansfont{CMU Sans Serif}
+\setmonofont{CMU Typewriter Text} % This one is not mature enough. Characters like "{}" is absent. In the future once it is mature, it would be better to set the main/sans/mono to CMU and NOT switching from Latin to Greek or vice versa.
+
+
+% Font Features
+\defaultfontfeatures[\rmfamily,\sffamily]{Ligatures=TeX}
+
+% XeCJK
+\usepackage{xeCJK} % Another way to support CJK
+\setCJKmainfont[BoldFont = * Bold, AutoFakeSlant]{Kaiti TC}
+\setCJKsansfont[AutoFakeSlant]{Microsoft YaHei}
+\setCJKmonofont[AutoFakeBold, AutoFakeSlant]{FangSong}
