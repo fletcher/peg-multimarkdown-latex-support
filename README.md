@@ -85,4 +85,4 @@ Use another theme in beamer class. The default example is `Berkeley`.
 
 # Examples #
 
-See [Example Metadata Setup in MMD](readme-Metadata.md).
+See [Example Metadata Setup in MMD](readme-Metadata.md) and [examples in metadata-examples](metadata-examples/).

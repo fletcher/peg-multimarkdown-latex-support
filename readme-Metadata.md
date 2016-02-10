@@ -9,7 +9,7 @@ The goals of the metadata setup are:
 - Include Physics and Math support, including the `amsthm` mentioned above
 - Both HTML (hence MMD editor preview) and LaTeX output are as close as possible
 
-See [Example here](https://ickc.github.io/peg-multimarkdown-latex-support/index.md).
+See [examples in metadata-examples](metadata-examples/).
 
 
 ## Header ##
@@ -54,7 +54,7 @@ HTML Header:	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs
 ### Custom CSS for HTML Output ###
 
 ```yaml
-CSS:	https://ickc.github.io/peg-multimarkdown-latex-support/Grump.css
+CSS:	https://ickc.github.io/multimarkdown-setup/css/Grump.css
 HTML Header:	<div id="wrapper">
 HTML Header Level:	1
 ```
@@ -100,7 +100,7 @@ Use XeLaTeX:	true
 Add (see [LaTeX Document Sectioning][] for section name):
 
 ```yaml
-CSS:	https://ickc.github.io/peg-multimarkdown-latex-support/amsthm.css
+CSS:	https://ickc.github.io/multimarkdown-amsthm-css/amsthm.min.css
 thmd:	chapter
 LaTeX Input:	mmd-load-amsthm
 ```
