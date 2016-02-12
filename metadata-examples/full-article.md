@@ -52,6 +52,8 @@ Cancel:
 \cancel{p}
 \end{equation}\\]
 
+Also see the equation numbering above.
+
 ## Highlight ##
 
 ```bash
@@ -66,7 +68,7 @@ done < "$1"
 ## Amsthm ##
 
 <!--\begin{conjecture}-->  <div class="conjecture">
-\\[1+1=2\\]
+1+1=2
 <!--\end{conjecture}--></div>
 
 ## List ##
@@ -96,4 +98,4 @@ done < "$1"
 
 ## Heading ##
 
-See the heading
+See the heading numbering above
