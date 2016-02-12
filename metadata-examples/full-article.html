@@ -2,8 +2,8 @@
 <html>
 <head>
 	<meta charset="utf-8"/>
-<script type="text/x-mathjax-config">MathJax.Ajax.config.path["Contrib"]="https://cdn.mathjax.org/mathjax/contrib";MathJax.Hub.Register.StartupHook("TeXJaxReady",function(){MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{cancel:["Extension","cancel"],bcancel:["Extension","cancel"],xcancel:["Extension","cancel"],cancelto:["Extension","cancel"]});});MathJax.Hub.Config({TeX:{equationNumbers:{autoNumber:"AMS"},extensions:["[Contrib]/physics/physics.js"]}});</script><script type="text/javascript"src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
-<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script>
+<script type="text/x-mathjax-config">MathJax.Ajax.config.path.Contrib="https://cdn.mathjax.org/mathjax/contrib",MathJax.Hub.Register.StartupHook("TeX Jax Ready",function(){MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{cancel:["Extension","cancel"],bcancel:["Extension","cancel"],xcancel:["Extension","cancel"],cancelto:["Extension","cancel"]})}),MathJax.Hub.Config({TeX:{equationNumbers:{autoNumber:"AMS"},extensions:["[Contrib]/physics/physics.js"]}});</script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full"></script>
+	<link type="text/css" rel="stylesheet" href="https://ickc.github.io/multimarkdown-latex-css/combined-css/multimarkdown-latex.css"/>
 	<meta name="latexheaderlevel" content="2"/>
 	<meta name="latexinput" content="mmd-article-header"/>
 	<meta name="latexinput" content="mmd-natbib-plain"/>
@@ -11,7 +11,6 @@
 	<meta name="latexinput" content="mmd-load-tables-related"/>
 	<meta name="latexinput" content="mmd-load-pdfpages"/>
 	<meta name="latexinput" content="mmd-load-headings"/>
-	<link type="text/css" rel="stylesheet" href="https://ickc.github.io/multimarkdown-amsthm-css/amsthm.min.css"/>
 	<meta name="thmd" content="chapter"/>
 	<meta name="latexinput" content="mmd-load-amsthm"/>
 	<title>Temp Title</title>
@@ -34,9 +33,9 @@ All Rights Reserved."/>
 </head>
 <body>
 
+<p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script>
 <!-- \begin{comment} -->
-
-<p><strong>Table of Contents</strong></p><div class="TOC">
+<strong>Table of Contents</strong></p><div class="TOC">
 
 
 <ul>
@@ -46,6 +45,13 @@ All Rights Reserved."/>
 <li><a href="#mathjaxandphysics">MathJax and Physics</a></li>
 <li><a href="#highlight">Highlight</a></li>
 <li><a href="#amsthm">Amsthm</a></li>
+<li><a href="#list">List</a>
+
+<ul>
+<li><a href="#unordered">Unordered</a></li>
+<li><a href="#ordered">Ordered</a></li>
+</ul></li>
+<li><a href="#heading">Heading</a></li>
 </ul></li>
 </ul>
 </div>
@@ -56,7 +62,17 @@ All Rights Reserved."/>
 
 <h2 id="mathjaxandphysics">MathJax and Physics</h2>
 
-<p><span class="math">\(\ket{\upsilon}\)</span></p>
+<p>Physics:</p>
+
+<p><span class="math">\[\begin{equation}
+\ket{\upsilon}
+\end{equation}\]</span></p>
+
+<p>Cancel:</p>
+
+<p><span class="math">\[\begin{equation}
+\cancel{p}
+\end{equation}\]</span></p>
 
 <h2 id="highlight">Highlight</h2>
 
@@ -71,8 +87,58 @@ done &lt; &quot;$1&quot;
 <h2 id="amsthm">Amsthm</h2>
 
 <p><!--\begin{conjecture}--> <div class="conjecture">
-<span class="math">\(1+1=2\)</span>
+<span class="math">\[1+1=2\]</span>
 <!--\end{conjecture}--></div></p>
+
+<h2 id="list">List</h2>
+
+<h3 id="unordered">Unordered</h3>
+
+<ol>
+<li>testing</li>
+<li>testing
+
+<ol>
+<li>testing</li>
+<li>testing
+
+<ol>
+<li>testing</li>
+<li>testing
+
+<ol>
+<li>testing</li>
+<li>testing</li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol>
+
+<h3 id="ordered">Ordered</h3>
+
+<ul>
+<li>testing</li>
+<li>testing
+
+<ul>
+<li>testing</li>
+<li>testing
+
+<ul>
+<li>testing</li>
+<li>testing
+
+<ul>
+<li>testing</li>
+<li>testing</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="heading">Heading</h2>
+
+<p>See the heading</p>
 
 </body>
 </html>

@@ -1,6 +1,6 @@
 ---
-HTML Header:	<script type="text/x-mathjax-config">MathJax.Ajax.config.path["Contrib"]="https://cdn.mathjax.org/mathjax/contrib";MathJax.Hub.Register.StartupHook("TeXJaxReady",function(){MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{cancel:["Extension","cancel"],bcancel:["Extension","cancel"],xcancel:["Extension","cancel"],cancelto:["Extension","cancel"]});});MathJax.Hub.Config({TeX:{equationNumbers:{autoNumber:"AMS"},extensions:["[Contrib]/physics/physics.js"]}});</script><script type="text/javascript"src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
-HTML Header:	<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script>
+HTML Header:	<script type="text/x-mathjax-config">MathJax.Ajax.config.path.Contrib="https://cdn.mathjax.org/mathjax/contrib",MathJax.Hub.Register.StartupHook("TeX Jax Ready",function(){MathJax.Hub.Insert(MathJax.InputJax.TeX.Definitions.macros,{cancel:["Extension","cancel"],bcancel:["Extension","cancel"],xcancel:["Extension","cancel"],cancelto:["Extension","cancel"]})}),MathJax.Hub.Config({TeX:{equationNumbers:{autoNumber:"AMS"},extensions:["[Contrib]/physics/physics.js"]}});</script><script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML-full"></script>
+CSS:	https://ickc.github.io/multimarkdown-latex-css/combined-css/multimarkdown-latex.css
 HTML Header Level:	1
 LaTeX Header Level:	2
 LaTeX Input:	mmd-article-header
@@ -9,7 +9,6 @@ LaTeX Input:	mmd-load-physics-related
 LaTeX Input:	mmd-load-tables-related
 LaTeX Input:	mmd-load-pdfpages
 LaTeX Input:	mmd-load-headings
-CSS:	https://ickc.github.io/multimarkdown-amsthm-css/amsthm.min.css
 thmd:	chapter
 LaTeX Input:	mmd-load-amsthm
 Title:	Temp Title
@@ -30,7 +29,7 @@ LaTeX Input:	mmd-load-toc-setcounter
 LaTeX Input:	mmd-load-toc
 LaTeX Footer:	mmd-memoir-footer
 ---
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script><script>hljs.initHighlightingOnLoad();</script>
 <!-- \begin{comment} -->
 **Table of Contents**
 
@@ -41,7 +40,17 @@ LaTeX Footer:	mmd-memoir-footer
 
 ## MathJax and Physics ##
 
-\\(\ket{\upsilon}\\)
+Physics:
+
+\\[\begin{equation}
+\ket{\upsilon}
+\end{equation}\\]
+
+Cancel:
+
+\\[\begin{equation}
+\cancel{p}
+\end{equation}\\]
 
 ## Highlight ##
 
@@ -57,5 +66,34 @@ done < "$1"
 ## Amsthm ##
 
 <!--\begin{conjecture}-->  <div class="conjecture">
-\\(1+1=2\\)
+\\[1+1=2\\]
 <!--\end{conjecture}--></div>
+
+## List ##
+
+### Unordered ###
+
+1. testing
+2. testing
+	1. testing
+	2. testing
+		1. testing
+		2. testing
+			1. testing
+			2. testing
+
+### Ordered ###
+
+
+- testing
+- testing
+	- testing
+	- testing
+		- testing
+		- testing
+			- testing
+			- testing
+
+## Heading ##
+
+See the heading
