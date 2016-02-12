@@ -73,7 +73,7 @@ done < "$1"
 
 ## List ##
 
-### Unordered ###
+### Ordered ###
 
 1. testing
 2. testing
@@ -84,7 +84,7 @@ done < "$1"
 			1. testing
 			2. testing
 
-### Ordered ###
+### Unordered ###
 
 
 - testing
